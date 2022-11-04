@@ -8,6 +8,8 @@ description = "Block scopes in Python? Whaaaaaat?!"
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
+version = "0.1.2"
+
 keywords = [
   "scoping", "variables", "memory", "cursed", "hack",
 ]
@@ -17,7 +19,6 @@ authors = [
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
-  "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
@@ -28,18 +29,14 @@ classifiers = [
 dependencies = [
   "module-hygiene>=0.2",
 ]
-dynamic = ["version"]
 
 [project.urls]
 Documentation = "https://github.com/unknown/block-scopes#readme"
 Issues = "https://github.com/unknown/block-scopes/issues"
 Source = "https://github.com/unknown/block-scopes"
 
-[tool.hatch.version]
-path = "scopes/__static__.py"
-
 [tool.hatch.build]
-exclude = ["*.yml"]
+exclude = [".github"]
 
 [tool.hatch.envs.default]
 dependencies = [

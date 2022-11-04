@@ -3,9 +3,12 @@ Does block scoping work correctly?
 """
 
 
+from multiprocessing.spawn import old_main_modules
+
+
 def test_scoping():
     """Does block scoping work correctly?"""
-    from scopes import scope
+    from scopes import only
 
     A = "A"
 
@@ -14,7 +17,7 @@ def test_scoping():
 
     C = __builtins__
 
-    with scope("D"):
+    with only("D"):
         D = True
         E = False
 

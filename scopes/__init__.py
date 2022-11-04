@@ -2,7 +2,7 @@
 Block scoping in Python!
 """
 
-__export__ = {"scope"}
+__export__ = {"only"}
 
 
 from importlib.metadata import version, PackageNotFoundError
@@ -21,7 +21,7 @@ from contextlib import contextmanager
 
 
 @contextmanager
-def scope(*names: str):
+def only(*names: str):
     import inspect
 
     if current := inspect.currentframe():
