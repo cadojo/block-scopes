@@ -22,6 +22,30 @@ from contextlib import contextmanager
 
 @contextmanager
 def only(*names: str):
+    """
+    Execute all code in the context manager, and then retroactively delete (through the
+    del operator) all variable names which were newly defined in the code block, except for
+    the names which are provided as arguments.
+
+    For example...
+
+        a = 1
+
+        with only("b", "c"):
+            d = 24
+            b = d
+            c = b - 24
+
+        a, b, c # this will run without issue
+
+        try:
+            d
+        except NameError:
+            print("The `only` block removed the variable d from the current namespace!")
+
+
+    """
+
     import inspect
 
     if current := inspect.currentframe():
