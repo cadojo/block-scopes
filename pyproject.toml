@@ -25,9 +25,10 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
+  "Typing :: Typed",
 ]
 dependencies = [
-  "module-hygiene>=0.2",
+  "module-hygiene>=0.3",
 ]
 
 [project.urls]
@@ -36,7 +37,7 @@ Issues = "https://github.com/cadojo/block-scopes/issues"
 Source = "https://github.com/cadojo/block-scopes"
 
 [tool.hatch.build]
-exclude = [".github"]
+include = ["py.typed"]
 
 [tool.hatch.envs.default]
 dependencies = [
